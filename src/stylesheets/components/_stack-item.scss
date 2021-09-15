@@ -1,0 +1,31 @@
+.stack__item{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width:360px;
+	margin:5px;
+	margin-left: auto;
+	margin-right: auto;
+	transition: all 1.4s ease;
+	left:0;
+	top:0;
+
+	&:hover .photo__overlay{
+		display:initial;
+	}
+
+	img{
+		width: auto;
+		max-height:200px;
+	}
+
+	h3{
+		margin:5px;
+		font-family: monospace;
+		font-size: 1.5rem;
+	}
+
+	&, .photo__overlay{
+		padding:15px;
+	}
+}

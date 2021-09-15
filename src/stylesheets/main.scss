@@ -1,0 +1,93 @@
+@charset 'utf-8';
+@import 'abstracts/variables';
+@import 'components/header';
+@import 'components/about';
+@import 'components/photo';
+@import 'components/portfolio';
+@import 'components/contact';
+
+html, body, head{
+	margin:0;
+	padding:0;
+}
+
+img{
+	width:100%;
+	height:auto;
+}
+
+body{
+  color: $dark-text;
+  background-color: $light-theme;
+  font-family: $font-family-main;
+  overflow: hidden;
+
+  *{
+  	text-align:center;
+  }
+}
+
+
+a{
+	text-decoration: none;
+	color:white;
+	display: inline-block;
+}
+
+.loader{
+	position: absolute;
+	margin:auto;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	border:solid;
+	height:40px;
+	width:40px;
+	border-radius: 50%;
+	border: solid 8px; 
+	border-right-color: gold;
+	animation:1.2s ease spinner infinite;
+}
+
+.loaded{
+	overflow: auto
+}
+
+.loaded .cover{
+	opacity:0;
+}
+
+.cover{
+	position: fixed;
+	background: $light-theme;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	z-index: 99;
+	opacity: 1;
+	transition: opacity 0.5s;
+}
+
+@keyframes spinner{
+	from {transform:rotate(0deg);};
+	to {transform:rotate(360deg);};
+}
+
+
+.portfolio__project-enter{
+	transform: scale(0.0);
+	transition: 0.5s;
+	&-active{
+	transform: scale(1.0);
+	}
+}
+
+.portfolio__project-exit{
+	transform:scale(1.0);
+	transition:0.5s;
+	&-active{
+		transform: scale(0);
+	}
+}

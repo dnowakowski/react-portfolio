@@ -1,0 +1,11 @@
+@import 'stack-item';
+
+.stack{
+	padding:15px;
+	display:flex;
+	flex-wrap:wrap;
+	flex: 1 1;
+/*	display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+*/
+}

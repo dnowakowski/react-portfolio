@@ -1,0 +1,128 @@
+.portfolio{
+	&__tag-manager{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin:auto;
+		margin-bottom:0px;
+		width:fit-content;
+		background: #121212;
+		color:white;
+		border-radius: 8px 8px 0px 0px;
+		padding:15px;
+		transform: translateY(5px);
+		user-select: none;
+	}
+
+	&__container{
+		margin:0;
+		background-color: #121212;
+		color:white;
+		padding: 15px;
+		border-radius: 8px;
+				z-index: 2;
+	}
+
+	.tag{
+		display: grid;
+		grid-template-columns: 1fr 15px;
+		max-width: 105px;
+		margin:2px;
+		padding: 12px;
+		filter: brightness(1);
+		transition: filter 0.5s;
+		cursor: pointer;
+		transform: skew(-6deg);
+
+		*{
+			cursor: pointer;
+		}
+		&__exit{
+			border-radius: 100%;
+			height:auto;
+		}
+	}
+
+	.tag--deactivated{
+		filter: brightness(0.4);
+	}
+
+	&__grid{
+		display: grid;
+		margin: 15px;
+		padding: 5px;
+		grid-template-columns: repeat(auto-fit, minmax(360px,1fr));
+		grid-gap: 5px;
+	}
+
+	/* GRID  MOBILE */
+	@media only screen and (max-width: 460px) {
+	  &__grid {
+	    grid-template-columns: 1fr;
+	  }
+	}
+
+	&__project{
+		box-sizing: border-box;
+		position: relative;
+		width:100%;
+		border: solid 1px black;
+		overflow: hidden;
+		
+		img{
+			transition: all 1s;
+			width:100%;
+			max-width: 320px;
+			filter: brightness(0.5);
+		
+			&:hover{
+				filter:brightness(1);
+			}
+		}
+
+		.project__tags{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.tag{
+			display:block;
+			padding:8px;
+		}
+
+		.project__links{
+			display: flex;
+			flex-direction: column;
+			width:fit-content;
+			margin: auto;
+		}
+
+		.githubContainer{
+			display: flex;
+			flex-direction: column;
+		}
+	
+		.githubContainer > img{
+			width:48px;
+			filter: brightness(12);
+		}
+
+		.githubContainer > img:hover{
+			filter: brightness(6);
+		}
+
+		.project__demo{
+			padding:5px 40px 5px 40px;
+			position: absolute;
+			right:-20px;
+			bottom: 5px;
+			background-color: darkred;
+			transform: rotate(-30deg);
+		}
+		.project__demo a{
+			color:white;
+			font:cursive;
+		}
+	}
+}

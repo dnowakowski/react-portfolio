@@ -1,0 +1,17 @@
+.contact{
+	&__grid{
+		display:grid;
+		grid-row-gap: 60px;
+		grid-auto-flow: column;
+		justify-content: center;
+		grid-gap: 15px;
+	}
+
+	&__item{
+		margin: 0;
+	}
+	img{
+		height:64px;
+	}
+
+}
